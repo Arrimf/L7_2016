@@ -20,7 +20,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	
 
-///*
+/*
 ////////////////////////////////////////////////////////////////////////////
 	//Тема. Шаблоны функций.
 	//Создайте шаблон функции перестановки местами двух
@@ -41,7 +41,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	MyString str1("One"), str2("Two");
 	Swap(str1, str2);
 	_SP
-//*/
+*/
 /////////////////////////////////////////////////////////////////////
 	
 	//Тема. Шаблоны классов.
@@ -64,8 +64,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	//push() и pop(), operator[]
 
 
+	MyStack<int, 6> iStack();//(5);
+	MyStack<double, 2> St2;
+	MyStack<MyString, 5> strStack;//("r");
 
-
+	strStack.Push("q-q");
+	MyString r = MyString(strStack.Top());
+	strStack[0] = "we";
+	_SP
 
 
 

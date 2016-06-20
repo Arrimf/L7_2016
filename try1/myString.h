@@ -10,7 +10,7 @@ class MyString
 public:
 //MyString();
 
-explicit MyString(const char* str="");
+MyString(const char* str=nullptr);
 MyString(char*&& str);
 MyString(const MyString& n_str);
 MyString(MyString&& n_str);
@@ -26,13 +26,13 @@ void Swap(MyString&);
  char* operator= (const char*);
  MyString& operator= (const MyString&);
  MyString& operator= (MyString&&);
+ MyString& operator= (char*&&);
  friend std::ostream& operator<< (std::ostream&, const MyString&);
- //ostream& operator<< (ostream&);
+ 
  MyString& operator+= (const MyString&);
  MyString operator+ (const MyString&)const;
 
 ~MyString();
 };
 
-//ostream& operator<< (ostream&, MyString&);
-//MyString concat(const char*, ...);
+

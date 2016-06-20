@@ -10,20 +10,32 @@ using namespace std;
 //	m_pStr = nullptr;
 //}
 MyString::MyString(const char* str){
-	m_pStr = new char[strlen(str) + 1];
-	strcpy(m_pStr, str);
+	if (str) {
+		m_pStr = new char[strlen(str) + 1];
+		strcpy(m_pStr, str);
+	}
+	else { m_pStr = nullptr; }
 }
 MyString::MyString(char*&& str) {
-	m_pStr = const_cast<char*> (str);
-	str = nullptr;
+	if (str) {
+		m_pStr = const_cast<char*> (str);
+		str = nullptr;
+	}
+	else { m_pStr = nullptr; }
 }
 MyString::MyString(const MyString & str) {
-	m_pStr = new char[strlen(str.m_pStr) + 1];
-	strcpy(m_pStr, str.m_pStr);
+	if (str.m_pStr) {
+		m_pStr = new char[strlen(str.m_pStr) + 1];
+		strcpy(m_pStr, str.m_pStr);
+	}
+	else { m_pStr = nullptr; }
 }
 MyString::MyString(MyString&& str) {
-	m_pStr = str.m_pStr;
-	str.m_pStr = nullptr;
+	if (str.m_pStr) {
+		m_pStr = str.m_pStr;
+		str.m_pStr = nullptr;
+	}
+	else { m_pStr = nullptr; }
 }
 
 // Определение деструктора.
@@ -33,17 +45,22 @@ MyString::~MyString() {
 
 //////////////////////////////////////
 const char* MyString::GetString () const{
-	return m_pStr;
+	//if (m_pStr) {
+		return m_pStr;
+	//}
 }
 const char* MyString::GetString(){
-	if (m_pStr) {
+	//if (m_pStr) {
 		return m_pStr;
-	}
+	//}
 }
 void MyString::SetNewString(const char* str) {
 	delete[] m_pStr;
-	m_pStr = new char[strlen(str) + 1];
-	strcpy_s(m_pStr, strlen(str) + 1, str);
+	if (str) {
+		m_pStr = new char[strlen(str) + 1];
+		strcpy_s(m_pStr, strlen(str) + 1, str);
+	}
+	else { m_pStr = nullptr; }
 }
 char* MyString::GetSetString() {
 	if (m_pStr) {
@@ -51,11 +68,14 @@ char* MyString::GetSetString() {
 	}
 }
 void MyString::AddString(const char* str) {
+	if (str) {
 	char*tmp = new char[strlen(m_pStr) + strlen(str)+1];
 	strcpy(tmp, m_pStr);
 	strcat(tmp,str);
 	delete[] m_pStr;
 	m_pStr = tmp;
+	}
+	//else { m_pStr = nullptr; }
 }
 void MyString::Swap(MyString& other){
 	char*tmp = m_pStr;
@@ -64,27 +84,40 @@ void MyString::Swap(MyString& other){
 }
 
 char* MyString::operator= (const char* str){
-	
+	if(str){
 		//SetNewString(str);
 		delete[] m_pStr;
 		m_pStr = new char [strlen(str) + 1];
 		strcpy(m_pStr,str);
-	
+	}
+	else { m_pStr = nullptr; }
 	return m_pStr;
 }
 MyString& MyString::operator= (const MyString& other){
 	if (m_pStr != other.m_pStr){
-		delete[] m_pStr;
-		m_pStr = new char[strlen(other.m_pStr) + 1];
-		strcpy(m_pStr, other.m_pStr);
-		return *this;
+		if(other.m_pStr){
+			delete[] m_pStr;
+			m_pStr = new char[strlen(other.m_pStr) + 1];
+			strcpy(m_pStr, other.m_pStr);
+		}
+		else { m_pStr = nullptr; }
 	}
+	return *this;
 }
 MyString& MyString::operator= (MyString&& other){
 	if (m_pStr != other.m_pStr){
 		this->Swap(other);
 		return *this;
 	}
+}
+
+MyString& MyString::operator=(char*&& str){
+	if (str) {
+		m_pStr = const_cast<char*> (str);
+		str = nullptr;
+	}
+	else { m_pStr = nullptr; }
+	return *this;
 }
 
 MyString concat(const char*s1, ...) {
@@ -107,7 +140,9 @@ MyString concat(const char*s1, ...) {
 //}
 
 ostream& operator<< (ostream& os, const MyString& mStr) {
-	os << mStr.GetString();
+	if (mStr.GetString()) {
+		os << mStr.GetString();
+	}
 	return os;
 }
 MyString& MyString::operator+= (const MyString& other) {
