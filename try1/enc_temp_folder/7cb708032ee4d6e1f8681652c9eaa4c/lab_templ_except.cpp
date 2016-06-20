@@ -94,9 +94,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Str2St.Push(MyString());
 	
 		//MoveStack(Str2St, strStack);
-	//MyString r2 = Str2St.PoP();
+	MyString r2 = Str2St.PoP();
 	_SP
-		//strStack
+
 
 	//Задание 3. Реализуйте шаблон очереди - MyQueue таким образом, чтобы 
 	//для хранения элементов использовался динамический массив.

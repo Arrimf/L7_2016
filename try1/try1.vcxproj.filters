@@ -18,7 +18,13 @@
     <ClInclude Include="myString.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
-    <ClInclude Include="Templ.h">
+    <ClInclude Include="MyStack1.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="MyStack2.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncTeml.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>

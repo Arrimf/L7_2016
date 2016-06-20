@@ -31,6 +31,7 @@ void Swap(MyString&);
  
  MyString& operator+= (const MyString&);
  MyString operator+ (const MyString&)const;
+ inline const char* operator*(MyString&) { return m_pStr; }
 
 ~MyString();
 };
