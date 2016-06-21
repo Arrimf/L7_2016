@@ -1,5 +1,5 @@
 #pragma once
-
+//Стек - встроенный массив
 
 template<typename T,int size>
 class MyStack {

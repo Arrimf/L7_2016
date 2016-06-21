@@ -7,9 +7,11 @@
 
 #include <tchar.h>
 #include "myString.h"
+#include "Shape.h"
 #include "MyStack1.h"
 #include "MyStack2.h"
 #include "FuncTeml.h"
+
 
 //#include <stdexcept>
 

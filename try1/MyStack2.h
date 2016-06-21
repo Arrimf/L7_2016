@@ -21,6 +21,8 @@ public:
 	void Push(const T&)throw(const char*);
 	void Push(T&&)throw(const char*);
 	T PoP()throw(const char*);
+	void PrintStFromBottom();
+	void PrintNode(Node&);
 	//void Pop()throw(const char*);
 	//const T& Top()const;
 	//T& operator[](size_t)throw(const char*);
@@ -49,6 +51,11 @@ template<typename T>
 	 delete m_data;
 	// Head = m_Next;
  }
+
+ //template<typename T>
+	//void MyStack2<T>::Node::PrintNode() {
+	//	std::cout << *m_data;
+ //}
 
 
 template<typename T>
@@ -83,5 +90,18 @@ template<typename T>
 	 else { throw "I'm empty"; };
 	
  }
+
+ template<typename T>
+  void MyStack2<T>::PrintStFromBottom() {
+	 Node* cur = Head;
+	 if (cur) {
+		cur->m_Next->PrintNode()
+	 }
+ }
+
+  template<typename T>
+   void MyStack2<T>::PrintNode(Node &){
+
+   }
 
  
