@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FuncTeml.h" />
+    <ClInclude Include="MyQueue.h" />
     <ClInclude Include="MyStack2.h" />
     <ClInclude Include="myString.h" />
     <ClInclude Include="MyStack1.h" />

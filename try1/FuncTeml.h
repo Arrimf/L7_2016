@@ -8,10 +8,10 @@ template<typename T> void Swap(T&obj1, T&obj2) {
 }
 
 template<typename St1, typename St2 >
-void MoveStack(St1& st1, St2& st2) {
+void MoveStack(St1& dst, St2& src) {
 	while (1) {
 		try {
-			st1.Push(st2.PoP());
+			dst.Push(src.PoP());
 		}
 		catch (const char* ex) {
 			std::cout << ex;

@@ -16,7 +16,7 @@ public:
 	const T& Top()const;
 	T& operator[](size_t)throw(const char*);
 	//T*& operator--(T*&);
-	void Print()const;
+	void Print();
 	void Clear();
 	//MyStack& operator==(MyStack&)
 
@@ -86,7 +86,7 @@ T& MyStack<T, size>::operator[](size_t i) {
 }
 
 template<typename T, int size>
-void MyStack<T, size>::Print()const {
+void MyStack<T, size>::Print() {
 	for (size_t i = 0; i < m_size; i++)
 	{
 		std::cout << m_data[i] << std::endl;

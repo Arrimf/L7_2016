@@ -102,10 +102,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 	//MyString r4(Str2St.Top());
 	//r8.Print();
-	
+	MyQueue<int,10> Q1;
+	MyQueue<MyString, 4> Q2;
+	Q2.Push("qwe");
+	MoveStack(Q2, Str2St);
 	//r8 = Str2St;
 	
-	
+	r8.Push( Q2.PoP());
+	Q2.Push("qwe");
 		//MoveStack(Str2St, strStack);
 	//MyString r2 = Str2St.PoP();
 	_SP
@@ -116,15 +120,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	//При использовании массива следует учесть специфику очереди, то есть
 	//когда заполнен "хвост", в "голове" скорее всего уже имеются свободные элементы
 	//=> должен быть организован кольцевой буфер
-
-	MyQueue<int, 10> Q1;
-	MyQueue<MyString, 4> Q2;
-	Q2.Push("qwe");
-	MoveStack(Q2, Str2St);
-
-	r8.Push(Q2.PoP());
-	Q2.Push("qwe");
-	_SP
 
 	return 0;
 }
