@@ -19,3 +19,7 @@ template<typename St1 , typename St2 >
 			}
 		}
 	}
+	template<typename St> 
+	void PrintStack(St&) {
+		St.Print()
+	}

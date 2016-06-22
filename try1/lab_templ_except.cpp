@@ -78,6 +78,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	strStack.Push("q-q");
 	MyString r = MyString(strStack.Top());
 	strStack.Push("we");
+	
 	//_SP
 
 
@@ -93,6 +94,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	MyStack2<MyString>Str2St;
 	Str2St.Push("q-q");
 	Str2St.Push("oy");
+	//Str2St.Print();
+	//Str2St.Clear();
+	Str2St.Push("Boo");
+	Str2St.Print();
+	MyString r4(Str2St.Top());
 	//Str2St.Push(MyString());
 	
 		//MoveStack(Str2St, strStack);
