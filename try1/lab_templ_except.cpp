@@ -100,6 +100,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	r8 = Str2St;
 	MyString r4(Str2St.Top());
 	r8.Print();
+
 		//MoveStack(Str2St, strStack);
 	//MyString r2 = Str2St.PoP();
 	_SP
