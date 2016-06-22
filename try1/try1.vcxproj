@@ -118,22 +118,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="circle.h" />
     <ClInclude Include="FuncTeml.h" />
     <ClInclude Include="MyStack2.h" />
     <ClInclude Include="myString.h" />
     <ClInclude Include="MyStack1.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="Rect.h" />
-    <ClInclude Include="Shape.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="circle.cpp" />
     <ClCompile Include="lab_templ_except.cpp" />
     <ClCompile Include="myString.cpp" />
-    <ClCompile Include="point.cpp" />
-    <ClCompile Include="Rect.cpp" />
-    <ClCompile Include="Shape.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,11 +7,9 @@
 
 #include <tchar.h>
 #include "myString.h"
-#include "Shape.h"
 #include "MyStack1.h"
 #include "MyStack2.h"
 #include "FuncTeml.h"
-
 
 //#include <stdexcept>
 
@@ -78,7 +76,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	strStack.Push("q-q");
 	MyString r = MyString(strStack.Top());
 	strStack.Push("we");
-	
 	//_SP
 
 
@@ -94,13 +91,15 @@ int _tmain(int argc, _TCHAR* argv[])
 	MyStack2<MyString>Str2St;
 	Str2St.Push("q-q");
 	Str2St.Push("oy");
+	//Str2St.Push(MyString());
 	//Str2St.Print();
 	//Str2St.Clear();
 	Str2St.Push("Boo");
 	Str2St.Print();
+	MyStack2<MyString> r8;
+	r8 = Str2St;
 	MyString r4(Str2St.Top());
-	//Str2St.Push(MyString());
-	
+	r8.Print();
 		//MoveStack(Str2St, strStack);
 	//MyString r2 = Str2St.PoP();
 	_SP

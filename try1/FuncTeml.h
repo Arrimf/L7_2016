@@ -7,19 +7,19 @@ template<typename T> void Swap(T&obj1, T&obj2) {
 	obj2 = std::move(tmp);
 }
 
-template<typename St1 , typename St2 > 
-	void MoveStack(St1& st1, St2& st2) {
-		while (1) {
-			try {
-				st1.Push(st2.PoP());
-			}
-			catch (const char* ex) {
-				std::cout << ex;
-				break;
-			}
+template<typename St1, typename St2 >
+void MoveStack(St1& st1, St2& st2) {
+	while (1) {
+		try {
+			st1.Push(st2.PoP());
+		}
+		catch (const char* ex) {
+			std::cout << ex;
+			break;
 		}
 	}
-	template<typename St> 
-	void PrintStack(St&) {
-		St.Print()
-	}
+}
+template<typename St>
+void PrintStack(St&) {
+	St.Print()
+}
