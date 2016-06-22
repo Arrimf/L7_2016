@@ -106,8 +106,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 	//r8 = Str2St;
 	
-	MyQueue<Rect, 5>Q_r;
-	Q_r.Push(Circle(2, 1, 4));
+	
 		//MoveStack(Str2St, strStack);
 	//MyString r2 = Str2St.PoP();
 	_SP
@@ -119,6 +118,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	//когда заполнен "хвост", в "голове" скорее всего уже имеются свободные элементы
 	//=> должен быть организован кольцевой буфер
 
+	MyQueue<Rect, 5>Q_r;
+	Q_r.Push(Circle(2, 1, 4));
 	MyQueue<int, 10> Q1;
 	MyQueue<MyString, 4> Q2;
 	Q2.Push("qwe");
