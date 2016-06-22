@@ -23,6 +23,7 @@ public:
 	
 
 	Point& operator= (const Point&);
+	Point& operator= (Point&&) = default;
 
 	Point& operator+= (const Point&);
 	Point& operator+= (const double);

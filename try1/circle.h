@@ -33,7 +33,8 @@ public:
 	bool operator==(const Circle&)const;
 	virtual bool operator==(const Shape&) const;
 	//virtual Shape& operator=(const Shape&);
-	//Circle& operator=(const Circle&) = default;
+	Circle& operator=(const Circle&) = default;
+	Circle& operator=(Circle&&) = default;
 	inline virtual	 std::ostream& osPrint(std::ostream& os) const { return os << *this; }
 	friend std::ostream& operator<<(std::ostream&, const  Circle&);
 

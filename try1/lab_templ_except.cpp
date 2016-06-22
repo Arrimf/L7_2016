@@ -8,6 +8,7 @@
 #include <tchar.h>
 //#include <stdlib.h>
 #include "myString.h"
+#include "Rect.h"
 #include "MyStack1.h"
 #include "MyStack2.h"
 #include "MyQueue.h"
@@ -105,7 +106,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 	//r8 = Str2St;
 	
-	
+	MyQueue<Rect, 5>Q_r;
+	Q_r.Push(Circle(2, 1, 4));
 		//MoveStack(Str2St, strStack);
 	//MyString r2 = Str2St.PoP();
 	_SP

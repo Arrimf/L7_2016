@@ -44,7 +44,8 @@ public:
 	virtual bool operator==(const Rect&)const;
 	virtual bool operator==(const Shape&) const;
 	//virtual Shape& operator=(const Shape&);
-	//Rect& operator=(const Rect&) = default;
+	Rect& operator=(const Rect&) = default;
+	Rect& operator=(Rect&&) = default;
 	friend std::ostream& operator<<(std::ostream&, const  Rect&);
 	//Shape* operator*(Rect&) { return static_cast<Shape*>(this); };
 };
