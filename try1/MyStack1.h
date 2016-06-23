@@ -64,7 +64,6 @@ template<typename T, int size>
 void MyStack<T, size>::Pop() throw(const char *) {
 	if (m_size) {
 		m_size--;
-
 		m_data[m_size] = T();
 	}
 	else { throw "I'm empty"; };

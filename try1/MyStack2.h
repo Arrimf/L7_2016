@@ -25,7 +25,7 @@ public:
 	MyStack2() {};
 	void Push(const T&)throw(const char*);
 	void Push(T&&)throw(const char*);
-	T PoP()throw(const char*);
+	T&& PoP()throw(const char*);
 	void Pop()throw(const char*);
 	const T& Top()const throw(const char*);
 	void Print()const;
@@ -85,7 +85,7 @@ void MyStack2<T>::Push(T&& obj) throw(const char *) {
 }
 
 template<typename T>
-T MyStack2<T>::PoP() throw(const char *)
+T&& MyStack2<T>::PoP() throw(const char *)
 {
 	if (m_size) {
 		T tmp(std::move(*Head->m_data));
