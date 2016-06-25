@@ -7,11 +7,11 @@ class MyStack {
 	size_t m_cap = size;
 	size_t m_size = 0;
 public:
-	MyStack() {};
-	MyStack(const T& val);
+	MyStack() =default;
+	MyStack(const T& val) ;
 	void Push(const T&)throw(const char*);
 	void Push(T&&)throw(const char*);
-	T&& PoP()throw(const char*);
+	T PoP()throw(const char*);
 	void Pop()throw(const char*);
 	const T& Top()const;
 	T& operator[](size_t)throw(const char*);
@@ -52,7 +52,7 @@ void MyStack<T, size>::Push(T&& obj) throw(const char *) {
 }
 
 template<typename T, int size>
-T&& MyStack<T, size>::PoP() throw(const char *) {
+T MyStack<T, size>::PoP() throw(const char *) {
 	if (m_size) {
 		m_size--;
 		return std::move(m_data[m_size]);
@@ -65,7 +65,7 @@ void MyStack<T, size>::Pop() throw(const char *) {
 	if (m_size) {
 		m_size--;
 
-		m_data[m_size] = T();
+		//m_data[m_size] = T();
 	}
 	else { throw "I'm empty"; };
 }

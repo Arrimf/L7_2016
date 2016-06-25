@@ -21,5 +21,7 @@ void MoveStack(St1& dst, St2& src) {
 }
 template<typename St>
 void PrintStack(St&) {
-	St.Print()
+	St.Print();
 }
+
+

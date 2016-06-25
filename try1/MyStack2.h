@@ -129,11 +129,11 @@ template<typename T>
 void MyStack2<T>::PrintNodes(const Node& cur)const {
 	if (cur.m_Next) {
 		PrintNodes(*cur.m_Next);
-		std::cout << *cur.m_data << std::endl;
+	//	std::cout << *cur.m_data << std::endl;
 	}
-	else {
+	//else {
 		std::cout << *cur.m_data << std::endl;
-	}
+	//}
 }
 
 template<typename T>
