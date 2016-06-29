@@ -78,7 +78,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	iStack.Push(1);
 	int&& tmp = iStack.PoP();
 	iStack.Push(2);
-	_SP
+	//_SP
 	MyStack<double, 2> St2;
 	MyStack<MyString, 5> strStack;//("r");
 
@@ -112,12 +112,12 @@ int _tmain(int argc, _TCHAR* argv[])
 	//MyString r4(Str2St.Top());
 	//r8.Print();
 	
-	//r8 = Str2St;
+	r8 = Str2St;
 	
 	
 		//MoveStack(Str2St, strStack);
 	//MyString r2 = Str2St.PoP();
-	//_SP
+	_SP
 		//strStack
 
 	//Задание 3. Реализуйте шаблон очереди - MyQueue таким образом, чтобы 

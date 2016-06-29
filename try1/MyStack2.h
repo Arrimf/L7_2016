@@ -18,7 +18,7 @@ class MyStack2 {
 	size_t m_cap = 100;
 protected:
 	void PrintNodes(const Node&)const;
-	void CopyNodes(const Node&, const MyStack2&);
+	void CopyNodes(const Node&);
 	
 public:
 
@@ -135,16 +135,16 @@ void MyStack2<T>::PrintNodes(const Node& cur)const {
 }
 
 template<typename T>
-void MyStack2<T>::CopyNodes(const Node& cur, const MyStack2<T> & other) {
+void MyStack2<T>::CopyNodes(const Node& cur) {
 	if (cur.m_Next) {
-		CopyNodes(*cur.m_Next, other);
+		CopyNodes(*cur.m_Next);
 	}
 	Push(*cur.m_data);
 }
 template<typename T>
 MyStack2<T>& MyStack2<T>::operator=(const MyStack2<T> & other) {
 	Clear();
-	CopyNodes(*other.Head, other);
+	CopyNodes(*other.Head);
 	return *this;
 }
 template<typename T>
