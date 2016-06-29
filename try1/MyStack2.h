@@ -3,8 +3,8 @@
 template<typename T>
 class MyStack2 {
 	struct Node {
-		T* m_data;
-		Node* m_Next;
+		T* m_data = nullptr;
+		Node* m_Next = nullptr;
 
 		Node(const T&, Node*);
 		Node(T&&, Node*);
@@ -19,7 +19,7 @@ class MyStack2 {
 protected:
 	void PrintNodes(const Node&)const;
 	void CopyNodes(const Node&, const MyStack2&);
-	//	inline Node& GetNext(Node& cur) { return *cur.m_Next ; }
+	
 public:
 
 	MyStack2() {};
@@ -30,7 +30,7 @@ public:
 	const T& Top()const throw(const char*);
 	void Print()const;
 	void Clear();
-	//inline Node& operator--(Node& cur) {cur.m_Next};
+	
 
 	MyStack2& operator=(const MyStack2&);
 	//T& operator[](size_t)throw(const char*);
@@ -129,20 +129,17 @@ template<typename T>
 void MyStack2<T>::PrintNodes(const Node& cur)const {
 	if (cur.m_Next) {
 		PrintNodes(*cur.m_Next);
-	//	std::cout << *cur.m_data << std::endl;
 	}
-	//else {
-		std::cout << *cur.m_data << std::endl;
-	//}
+	std::cout << *cur.m_data << std::endl;
+	
 }
 
 template<typename T>
 void MyStack2<T>::CopyNodes(const Node& cur, const MyStack2<T> & other) {
 	if (cur.m_Next) {
 		CopyNodes(*cur.m_Next, other);
-		Push(*cur.m_data);
 	}
-	else { Push(*cur.m_data); }
+	Push(*cur.m_data);
 }
 template<typename T>
 MyStack2<T>& MyStack2<T>::operator=(const MyStack2<T> & other) {

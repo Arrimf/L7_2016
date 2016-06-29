@@ -13,6 +13,7 @@
 #include "MyStack2.h"
 #include "MyQueue.h"
 #include "FuncTeml.h"
+#include <stack>
 
 //#include <stdexcept>
 
@@ -28,7 +29,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	
 
-/*
+
 ////////////////////////////////////////////////////////////////////////////
 	//Тема. Шаблоны функций.
 	//Создайте шаблон функции перестановки местами двух
@@ -42,14 +43,15 @@ int _tmain(int argc, _TCHAR* argv[])
 	double dX = 0.5, dY = -5.5;
 	Swap(dX, dY);
 
-	_SP
+	//_SP
 	//Подсказка 2: подумайте, что нужно реализовать, для того,
 	//			чтобы следующий вызов работал с объектами MyString
 	//			не только корректно, но и эффективно
+
 	MyString str1("One"), str2("Two");
 	Swap(str1, str2);
-	_SP
-*/
+	//_SP
+
 /////////////////////////////////////////////////////////////////////
 	
 	//Тема. Шаблоны классов.
@@ -71,7 +73,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//стек из 10 элементов MyString - strStack и поэкспериментируйте с функциями
 	//push() и pop(), operator[]
 
-
+	
 	MyStack<int, 6> iStack;//(5);
 	iStack.Push(1);
 	int&& tmp = iStack.PoP();
@@ -79,6 +81,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	_SP
 	MyStack<double, 2> St2;
 	MyStack<MyString, 5> strStack;//("r");
+
+	
 
 	strStack.Push("q-q");
 	MyString r = MyString(strStack.Top());

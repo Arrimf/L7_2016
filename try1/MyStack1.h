@@ -7,7 +7,7 @@ class MyStack {
 	size_t m_cap = size;
 	size_t m_size = 0;
 public:
-	MyStack() =default;
+	MyStack() = default;
 	MyStack(const T& val) ;
 	void Push(const T&)throw(const char*);
 	void Push(T&&)throw(const char*);
